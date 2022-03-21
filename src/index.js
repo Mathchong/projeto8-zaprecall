@@ -1,3 +1,4 @@
+import React from 'react';
 import ReactDOM from "react-dom";
 //import StartScreen from "./StartScreen";
 import Header from "./Header";
@@ -16,6 +17,8 @@ const questions = [
 ]
 
 function App() {
+    const[answered, setAnswered] = React.useState([])
+
     return (
         //<StartScreen />
         <>
@@ -24,8 +27,11 @@ function App() {
                 coverText={question.coverText}
                 question={question.questionText}
                 answer={question.answer}
-                 />)}
-            <Footer number={questions} />
+                //callback={(svg) => setAnswered(answered.push(svg))}
+                
+                />)}
+            <Footer number={questions} //done={answered} 
+            />
         </>
     )
 }
